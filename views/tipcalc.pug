@@ -1,0 +1,20 @@
+h1 Trip Calculator!
+
+
+form(action='/calc', method='post')
+  p
+    label Amount:
+    input(type='number', name='x' )
+
+  -var tips = ['5', '10', '15', '20'];
+
+  p
+    label Tip:
+    select(name='pct')
+      each tip, i in tips
+        option(value=tip )  #{tip}
+
+
+  button(type='submit', class='btn')  Compute tip
+  p
+    span=output
